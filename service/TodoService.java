@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.example.demo.model.TodoEntity;
 import com.example.demo.persistence.TodoRepository;
 
@@ -18,7 +17,8 @@ public class TodoService {
 		// Todo Entity 저장
 		repository.save(entity);
 		// Todo Entity 검색
-		TodoEntity savedEntity = repository.searchByUserId(entity.getUserId()).get(0);
+		TodoEntity savedEntity = 
+				repository.searchByUserId(entity.getUserId()).get(0);
 		return savedEntity.getUserId();
 	}
 }
